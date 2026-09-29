@@ -71,3 +71,17 @@ print(
         target_names=["Stay", "Churn"]
     )
 )
+
+#Saving model to google drive
+import joblib
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Now, save your model to a specific path in your Google Drive
+# For example, in a 'models' folder in your Drive
+model_drive_path = '/content/drive/MyDrive/Mini Project 2/Models/logistic_regression_model.joblib'
+
+# Save the model to the specified path
+joblib.dump(model, model_drive_path)
+
+print(f"Model saved to Google Drive at: {model_drive_path}")
